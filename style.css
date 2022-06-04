@@ -1,0 +1,31 @@
+body{
+    background-color:#363061;
+}
+
+h1{
+    text-align:center;
+    color:#e9d5da;
+    font-family:'Roboto';
+    font-size:50px;
+}
+
+h3{
+    text-align:center;
+    color:#9585ac;
+    font-family:'Lato';
+    font-size:22px;
+}
+
+table{
+    text-align:center;
+    color:#9585ac;
+    font-family:'Lato';
+    font-size:35px;
+    padding: 10px;
+
+}
+
+td{
+    background-color:#4D4C7D;
+    padding: 20px;
+}
