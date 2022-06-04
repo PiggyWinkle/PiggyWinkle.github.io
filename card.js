@@ -9,6 +9,9 @@ function newCard() {
 	for(var i=0; i < 24; i++) { 
 		setSquare(i,boxes[i]);
 	}
+
+  document.getElementById('squarefree').classList.remove('score');
+
 }
 
 
@@ -16,7 +19,9 @@ function setSquare(thisSquare,boxtext) {
 	var currSquare = "square"+thisSquare;
 	
 	document.getElementById(currSquare).innerHTML = boxtext;
+  document.getElementById(currSquare).classList.remove('score');
 }
+
 
 //idea sources: https://www.reddit.com/r/labrats/comments/v3velv/made_a_bingo_any_suggestions/
 Boxes=[
@@ -87,7 +92,11 @@ function doFit(){
 
 
 //bingo clicking
+function press(element){
 
+  document.getElementById(element.id).classList.toggle('score');
+  doFit();
+}
 
 //Suggestion Form
 function SubForm(){

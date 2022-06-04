@@ -1,5 +1,8 @@
 body{
     background-color:#3c3760;
+    background-image: url(microbes2.svg);
+    background-repeat: tile;
+    background-size: 2000px;
 }
 
 h1{
@@ -99,3 +102,4 @@ button{
     font-weight: bold;
 
 }
+
