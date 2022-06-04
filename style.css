@@ -1,5 +1,5 @@
 body{
-    background-color:#363061;
+    background-color:#3c3760;
 }
 
 h1{
@@ -17,15 +17,35 @@ h3{
 }
 
 table{
+    margin-left:auto;
+    margin-right:auto;
     text-align:center;
     color:#9585ac;
     font-family:'Lato';
     font-size:35px;
-    padding: 10px;
+    padding: 25px; /* this adds space above the entire table */
 
+}
+
+td:hover {
+    background-color:#e9d5da;
 }
 
 td{
     background-color:#4D4C7D;
-    padding: 20px;
+    border-radius: 10px;
+    padding: 60px;
+}
+
+button{
+    text-align:center;
+    border-radius: 5px;
+    font-family:'Roboto';
+    font-size:25px;
+    cursor: pointer;
+    
+}
+
+.text-center{
+text-align:center;
 }
