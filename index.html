@@ -3,52 +3,68 @@
         <head>
             <link rel="stylesheet" href="style.css">
             <script src="card.js"></script>
-            
+            <script src="textFit.js"></script>
+
+
             <title>Bingology</title>
     
         </head>
-        <body>
+        <body onload="newCard(), doFit()">
             <h1><b>Welcome to BINGOlogy!</b></h1>
             <h3>The weekly biology based bingo adventure.</h3>
-                    <button type="button" onClick="newCard()">Fresh BINGOlogy Card</button>
+                    <button type="button" onClick="newCard(), doFit()">New BINGOlogy Card</button>
 
             <table>
                 <tr>
-                    <td><div id="square0">&nbsp;</div></td>
-                    <td><div id="square1">&nbsp;</div></td>
-                    <td><div id="square2">&nbsp;</div></td>
-                    <td><div id="square3">&nbsp;</div></td>
-                    <td><div id="square4">&nbsp;</div></td>
+                    <td><div id="square0" class="bingo">&nbsp;</div></td>
+                    <td><div id="square1" class="bingo">&nbsp;</div></td>
+                    <td><div id="square2" class="bingo">&nbsp;</div></td>
+                    <td><div id="square3" class="bingo">&nbsp;</div></td>
+                    <td><div id="square4" class="bingo">&nbsp;</div></td>
+                </tr> 
+                <tr> 
+                    <td><div id="square5" class="bingo">&nbsp;</div></td>
+                    <td><div id="square6" class="bingo">&nbsp;</div></td>
+                    <td><div id="square7" class="bingo">&nbsp;</div></td>
+                    <td><div id="square8" class="bingo">&nbsp;</div></td>
+                    <td><div id="square9" class="bingo">&nbsp;</div></td>
                 </tr>
                 <tr>
-                    <td><div id="square5">&nbsp;</div></td>
-                    <td><div id="square6">&nbsp;</div></td>
-                    <td><div id="square7">&nbsp;</div></td>
-                    <td><div id="square8">&nbsp;</div></td>
-                    <td><div id="square9">&nbsp;</div></td>
-                </tr>
-                <tr>
-                    <td><div id="square10">&nbsp;</div></td>
-                    <td><div id="square11">&nbsp;</div></td>
-                    <td><div id="squarefree">FREE</div></td>
-                    <td><div id="square12">&nbsp;</div></td>
-                    <td><div id="square13">&nbsp;</div></td>
-                </tr>
-                <tr>
-                    <td><div id="square14">&nbsp;</div></td>
-                    <td><div id="square15">&nbsp;</div></td>
-                    <td><div id="square16">&nbsp;</div></td>
-                    <td><div id="square17">&nbsp;</div></td>
-                    <td><div id="square18">&nbsp;</div></td>
-                </tr>
-                <tr>
-                    <td><div id="square19">&nbsp;</div></td>
-                    <td><div id="square20">&nbsp;</div></td>
-                    <td><div id="square21">&nbsp;</div></td>
-                    <td><div id="square22">&nbsp;</div></td>
-                    <td><div id="square23">&nbsp;</div></td>
+                    <td><div id="square10" class="bingo">&nbsp;</div></td>
+                    <td><div id="square11" class="bingo">&nbsp;</div></td>
+                    <td><div id="squarefree" class="bingo">FREE</div></td>
+                    <td><div id="square12" class="bingo">&nbsp;</div></td>
+                    <td><div id="square13" class="bingo">&nbsp;</div></td>
+                </tr> 
+                <tr> 
+                    <td><div id="square14" class="bingo">&nbsp;</div></td>
+                    <td><div id="square15" class="bingo">&nbsp;</div></td>
+                    <td><div id="square16" class="bingo">&nbsp;</div></td>
+                    <td><div id="square17" class="bingo">&nbsp;</div></td>
+                    <td><div id="square18" class="bingo">&nbsp;</div></td>
+                </tr> 
+                <tr> 
+                    <td><div id="square19" class="bingo">&nbsp;</div></td>
+                    <td><div id="square20" class="bingo">&nbsp;</div></td>
+                    <td><div id="square21" class="bingo">&nbsp;</div></td>
+                    <td><div id="square22" class="bingo">&nbsp;</div></td>
+                    <td><div id="square23" class="bingo">&nbsp;</div></td>
                 </tr>
             </table>
+
+            <h3>Have a suggestion? Please submit it below! (50 character limit)</h3>
+           
+            <form id="myForm">
+                <label visibility: hidden>suggestions</label>
+                <div class="suggestion-box">
+                    <input type="text" id="suggestion-box" placeholder="Card Suggestions" maxlength="100" size="100">
+                </div>
+        
+                <button id="submit" onClick="SubForm()">Submit</button>
+                <ul id="unordered"></ul>
+            </form>
+
+            <h4>Adapted from u/Southern-Dependent94's post on r/LabRats!</h4>
 
         </body>
 </html>

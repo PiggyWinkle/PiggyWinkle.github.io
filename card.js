@@ -1,4 +1,5 @@
 function newCard() {
+ 
     //array goes here
     boxes=Boxes;
 
@@ -17,7 +18,7 @@ function setSquare(thisSquare,boxtext) {
 	document.getElementById(currSquare).innerHTML = boxtext;
 }
 
-
+//idea sources: https://www.reddit.com/r/labrats/comments/v3velv/made_a_bingo_any_suggestions/
 Boxes=[
     "Forgot negative control",
     "Used calculator for basic math",
@@ -48,6 +49,12 @@ Boxes=[
     "Torn nitrile glove",
     "Dripped bleach on shoes/pants",
     "Snacks in the breakroom",
+    "Powerpoint just don't work",
+    "Contaminated culture",
+    "Slamming random buttons to stop the beeping",
+    "Chemical in one big hard lump",
+    "N=1",
+    "No sterile bottles left",
 
 ];
 
@@ -69,3 +76,30 @@ function shuffle(array) {
   
     return array;
   }
+
+//text resizing stuff below https://github.com/STRML/textFit#implementation-details
+
+function doFit(){
+  textFit(document.getElementsByClassName('bingo'), {maxFontSize: 22, alignHoriz: true, alignVert: true, multiLine: true });
+}
+
+//cookies
+
+
+//bingo clicking
+
+
+//Suggestion Form
+function SubForm(){
+  $.ajax({
+    url:'https://api.apispreadsheets.com/data/410/',
+    type:'post',
+    data:$("#myForm").serializeArray(),
+    success: function(){
+      alert("Thank you! :D")
+    },
+    error: function(){
+      alert("There was an error :/")
+    }
+});
+}
