@@ -77,6 +77,8 @@ Boxes=[
     "Chemical in one big hard lump",
     "N=1",
     "No sterile bottles left",
+    "Roasted a finger on the lab fire",
+    "Did I turn the bunsen burner off???",
 
 ];
 
