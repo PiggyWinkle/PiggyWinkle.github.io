@@ -22,6 +22,14 @@ function setSquare(thisSquare,boxtext) {
   document.getElementById(currSquare).classList.remove('score');
 }
 
+function saveState()
+{
+  var stateJSON = {};
+  for(var i=0; i < 24; i++) { 
+        stateJSON.push( { '${i}' : getSquare(i)});
+    }
+  document.cookie = "data = " + JSON.stringify(stateJSON); 
+}
 
 //idea sources: https://www.reddit.com/r/labrats/comments/v3velv/made_a_bingo_any_suggestions/
 Boxes=[
@@ -96,6 +104,7 @@ function press(element){
 
   document.getElementById(element.id).classList.toggle('score');
   doFit();
+  saveState();
 }
 
 //Suggestion Form
