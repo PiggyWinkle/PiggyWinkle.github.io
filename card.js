@@ -31,6 +31,14 @@ function saveState()
   document.cookie = "data = " + JSON.stringify(stateJSON); 
 }
 
+function getSquare(i)
+{
+  var json = {};
+  json.push({'text' : document.getElementById(currSquare).innerHTML});
+  json.push({'css' : document.getElementById(currSquare).classList.value});
+  return (json);
+}
+
 //idea sources: https://www.reddit.com/r/labrats/comments/v3velv/made_a_bingo_any_suggestions/
 Boxes=[
     "Forgot negative control",
