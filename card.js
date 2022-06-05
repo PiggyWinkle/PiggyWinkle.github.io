@@ -33,6 +33,7 @@ function saveState()
 
 function getSquare(i)
 {
+  var currSquare = "square"+i;
   var json = {};
   json.push({'text' : document.getElementById(currSquare).innerHTML});
   json.push({'css' : document.getElementById(currSquare).classList.value});

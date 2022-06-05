@@ -83,6 +83,8 @@ button{
     text-align:center;
     padding-bottom: 20px;
     color:#e9d5da;
+    height: 25%;
+    max-width: 25%;
 }
 
 /*text resizing*/
