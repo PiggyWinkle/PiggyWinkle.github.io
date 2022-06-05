@@ -36,7 +36,6 @@ table{
     font-size: 1.2vmin;
 }
 
-
 td{
     padding: 10px;
     background-color:#4D4C7D;
@@ -49,7 +48,7 @@ td{
     cursor: pointer;
 }
 
-
+/*entire bingo box*/
 .bingo{
     background-color:#4D4C7D;
     border-radius: 7px;
@@ -78,13 +77,21 @@ button{
 }
 
 /*suggestion box*/
-.suggestion-box{
+.suggestion{
     margin: 0 auto;
     text-align:center;
     padding-bottom: 20px;
-    color:#e9d5da;
-    height: 25%;
-    max-width: 25%;
+    
+}
+
+.suggestion-box{
+    text-align:center;
+    font-size:18px;
+    border-radius: 7px;
+    color:#4D4C7D;
+    font-weight: bold;
+    height: 150px;
+    width: 25%;
 }
 
 /*text resizing*/
