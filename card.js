@@ -1,3 +1,10 @@
+function pageInit()
+{
+  loadState();
+  createModal();
+}
+
+
 function newCard() {
  
     //array goes here
@@ -22,7 +29,8 @@ function setSquare(thisSquare,boxtext, css) {
 	var currSquare = "square"+thisSquare;
 	
 	document.getElementById(currSquare).textContent = boxtext;
-  document.getElementById(currSquare).classList.add(css.split(" "));
+  document.getElementById(currSquare).className = "";
+  document.getElementById(currSquare).classList.add(css.split(" ").remove(undefined));
 }
 
 function saveState()
@@ -32,8 +40,6 @@ function saveState()
         stateJSON[i] = getSquare(i);
     }
   document.cookie = "data = " + JSON.stringify(stateJSON); 
-
-  loadState();
 }
 
 function getSquare(i)
@@ -62,30 +68,10 @@ function loadState() {
   }
 }
 
-function applyToSquare(i, bingoJSON){
-
-}
 
 
 
 
-function shuffle(array) {
-    let currentIndex = array.length,  randomIndex;
-  
-    // While there remain elements to shuffle.
-    while (currentIndex != 0) {
-  
-      // Pick a remaining element.
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex--;
-  
-      // And swap it with the current element.
-      [array[currentIndex], array[randomIndex]] = [
-        array[randomIndex], array[currentIndex]];
-    }
-  
-    return array;
-  }
 
   function getCookie(cname) {
     let name = cname + "=";
@@ -135,6 +121,31 @@ function SubForm(){
 }
 
 
+
+//Modal modal modal
+
+function createModal(){
+  let modalBtn = document.getElementById("modal-btn")
+  
+  let modal = document.querySelector(".modal")
+  
+  let closeBtn = document.querySelector(".close-btn")
+  
+    modalBtn.onclick = function(){
+      modal.style.display = "block"
+    }
+  
+    closeBtn.onclick = function(){
+      modal.style.display = "none"
+    }
+  
+    window.onclick = function(e){
+      if(e.target == modal){
+        modal.style.display = "none"
+      }
+    }
+  }
+  
 //idea sources: https://www.reddit.com/r/labrats/comments/v3velv/made_a_bingo_any_suggestions/
 Boxes=[
   "Forgot negative control",
@@ -174,26 +185,21 @@ Boxes=[
   "No sterile bottles left",
 
 ];
-//Modal modal modal
 
-function modal(){
-let modalBtn = document.getElementById("modal-btn")
+function shuffle(array) {
+  let currentIndex = array.length,  randomIndex;
 
-let modal = document.querySelector(".modal")
+  // While there remain elements to shuffle.
+  while (currentIndex != 0) {
 
-let closeBtn = document.querySelector(".close-btn")
+    // Pick a remaining element.
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
 
-modalBtn.onclick = function(){
-  modal.style.display = "block"
-}
-
-closeBtn.onclick = function(){
-  modal.style.display = "none"
-}
-
-window.onclick = function(e){
-  if(e.target == modal){
-    modal.style.display = "none"
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
   }
-}
+
+  return array;
 }
