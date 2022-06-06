@@ -7,27 +7,43 @@
 
             <link rel="icon" type="image/x-icon" href="flavicon-02.svg">
 
+            <!--Lato Font-->
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"> 
+
+            <!--Roboto Font-->
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+
+
             <title>Bingology</title>
     
         </head>
-        <body onload="newCard(), doFit()">
+        
+        
+        <body onload="newCard(), doFit(), modal()">
 
-            <div id="leaderboard">
-                <img id="leaderboard-icon" src="Leaderboard-03.svg" width="75" height="75">
-            </div>
 
-            <button id="myBtn">Open Modal</button>
+            <!-- Trigger/Open the Modal -->
+            <img src="Leaderboard-03.svg" width="75" height="75">
+            <button id="modal-btn"> click me, I make a modal</button>
 
             <!-- The Modal -->
-                <div id="myModal" class="modal">
-
-            <!-- Modal content -->
+            <div class="modal">
+                <div class="modal-header">
+                  <span class="close-btn">&times;</span>
+                  <h1>I am the Header</h1>
+                </div>
                 <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <p>Some text in the Modal..</p>
+                  <p>this is the text inside the modal</p>
                 </div>
-  
+                <div class="modal-footer">
+                  <h2>I am the Footer</h2>
                 </div>
+              </div>
+
 
 
             <h1>
