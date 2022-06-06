@@ -126,27 +126,53 @@ button{
     height: 100%; 
     background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.5);
-  }.modal-content {
-    position: relative; 
-    background-color: white;
-    padding: 20px; 
-    margin: auto; 
-    width: 75%;  
+  }
+
+  .modal-header {
+    position:relative;
+    background-color: #4D4C7D;
+    padding: 10px;
+    margin: auto;
+    width: 50%;
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
     animation-name: animatetop;
     animation-duration: 0.4s
-  }.close-btn {
+  }
+
+  #modal-header-font {
+      font-size: 28px;
+  }
+  
+  .modal-content {
+    position: relative; 
+    background-color: #e9d5da;
+    padding: 10px; 
+    margin: auto; 
+    width: 50%;
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+  }
+  
+  .close-btn {
     float: right; 
     color: lightgray; 
     font-size: 24px;  
     font-weight: bold;
-  }.close-btn:hover {
+  }
+  
+  .close-btn:hover {
     color: darkgray;
-  }@-webkit-keyframes animatetop {
+  }
+  
+  @-webkit-keyframes animatetop {
     from {top:-300px; opacity:0} 
     to {top:0; opacity:1}
-  }@keyframes animatetop {
+  }
+  
+  @keyframes animatetop {
     from {top:-300px; opacity:0}
     to {top:0; opacity:1}
   }

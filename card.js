@@ -121,7 +121,7 @@ function press(element){
 //Suggestion Form
 function SubForm(){
   $.ajax({
-    url:'https://api.apispreadsheets.com/data/410/',
+    url:'https://api.apispreadsheets.com/data/Rkm38o0zN04pqvHd/',
     type:'post',
     data:$("#myForm").serializeArray(),
     success: function(){
