@@ -7,14 +7,48 @@
 
             <link rel="icon" type="image/x-icon" href="flavicon-02.svg">
 
+            <!--Lato Font-->
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"> 
+
+            <!--Roboto Font-->
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+
+
             <title>Bingology</title>
     
         </head>
-        <body onload="loadState()">
+        
+        
+        <body onload="newCard(), doFit(), modal()">
+
+
+            <!-- Trigger/Open the Modal -->
+            <img src="Leaderboard-03.svg" width="75" height="75">
+            <button id="modal-btn"> click me, I make a modal</button>
+
+            <!-- The Modal -->
+            <div class="modal">
+                <div class="modal-header">
+                  <span class="close-btn">&times;</span>
+                  <h1>I am the Header</h1>
+                </div>
+                <div class="modal-content">
+                  <p>this is the text inside the modal</p>
+                </div>
+                <div class="modal-footer">
+                  <h2>I am the Footer</h2>
+                </div>
+              </div>
 
 
 
-            <h1><b>Welcome to BINGOlogy!</b></h1>
+            <h1>
+                <b>Welcome to BINGOlogy!</b>
+            </h1>
             <h3>The weekly biology based bingo adventure.</h3>
                     <button type="button" onClick="newCard(), doFit()">New BINGOlogy Card</button>
 
@@ -60,8 +94,11 @@
            
             <form id="myForm">
                 <label visibility: hidden>suggestions</label>
-                <div class="suggestion-box">
-                    <input type="text" id="suggestion-box" placeholder="Card Suggestions" maxlength="100">
+                <div class="suggestion">
+                    <!--
+                    <input type="text" id="suggestion-box" class="suggestion-box" placeholder="Card Suggestions" maxlength="100">
+                    -->
+                    <textarea class="suggestion-box" rows="6" cols="30"></textarea>
                 </div>
         
                 <button id="submit" onClick="SubForm()">Submit</button>
