@@ -7,9 +7,9 @@
 
             <!--Suggestion Box Scripts-->
             <script
-                src="https://code.jquery.com/jquery-3.4.1.js"
-                integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-                crossorigin="anonymous">
+		        src="https://code.jquery.com/jquery-3.4.1.js"
+		        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+		        crossorigin="anonymous">
             </script>
 
 
@@ -96,17 +96,16 @@
                 </tr>
             </table>
 
+            <!--Suggestion Box-->
+
             <h3>Have a suggestion? Please submit it below! (50 character limit)</h3>
            
-            <form id="myForm">
-                <label visibility: hidden>Suggestions</label>
-                
-                <div class="suggestion">
-                    <textarea name="comment" class="suggestion-box" rows="6" cols="30"></textarea>
-                </div>
-        
-                <button id="submit" onClick="SubForm()">Submit</button>
+            <form id="myForm" class="suggestion">
+                <label style="visibility:hidden">comment</label>
+                <textarea name="comment" id="comment" class="suggestion-box"></textarea>
+                <br/>
             </form>
+            <button onclick='SubForm()'>Submit</button>
 
             <h4>Adapted from u/Southern-Dependent94's post on r/LabRats!</h4>
 

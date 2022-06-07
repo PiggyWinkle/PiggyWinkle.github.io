@@ -119,18 +119,20 @@ function press(element){
 }
 
 //Suggestion Form
-function SubForm(){
+function SubForm (){
   $.ajax({
-    url:'https://api.apispreadsheets.com/data/Rkm38o0zN04pqvHd/',
-    type:'post',
+    url:"https://api.apispreadsheets.com/data/Rkm38o0zN04pqvHd/",
+    type:"post",
     data:$("#myForm").serializeArray(),
     success: function(){
-      alert("Thank you! :D")
+      alert("Form Data Submitted :D")
     },
     error: function(){
-      alert("There was an error :/")
+      alert("There was an error :(")
     }
-});
+  });
+
+  document.getElementById('comment').value = '';
 }
 
 //Modal modal modal
