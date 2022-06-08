@@ -14,7 +14,7 @@ function newCard() {
     shuffle(boxes)
     
 	for(var i=0; i < 24; i++) { 
-		setSquare(i,boxes[i]);
+		setSquare(i,boxes[i], "bingo");
 	}
 
   document.getElementById('squarefree').classList.remove('score');
@@ -30,7 +30,7 @@ function setSquare(thisSquare,boxtext, css) {
 	
 	document.getElementById(currSquare).textContent = boxtext;
   document.getElementById(currSquare).className = "";
-  document.getElementById(currSquare).classList.add(css.split(" ").remove(undefined));
+  document.getElementById(currSquare).classList.add(...(css.split(" ")));
 }
 
 function saveState()
@@ -62,7 +62,7 @@ function loadState() {
     var bingoJSON = JSON.parse(getCookie("data"));
     console.log(bingoJSON);
     for(var i=0; i < 24; i++) { 
-      //console.log(bingoJSON[i]);
+      console.log(bingoJSON[i]);
       setSquare(i, bingoJSON[i].text, bingoJSON[i].css);
     }
   }
