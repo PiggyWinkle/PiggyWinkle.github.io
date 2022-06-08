@@ -78,14 +78,11 @@ button{
 
 /*suggestion box*/
 .suggestion{
-    margin: 0 auto;
     text-align:center;
     padding-bottom: 20px;
 }
 
 .suggestion-box{
-    text-align:center;
-    margin: 0 auto;
     font-size:18px;
     border-radius: 7px;
     color:#4D4C7D;
