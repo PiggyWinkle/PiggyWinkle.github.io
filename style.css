@@ -125,7 +125,7 @@ button{
     background-color: rgba(0, 0, 0, 0.5);
   }
 
-  .modal-header {
+.modal-header {
     position:relative;
     background-color: #4D4C7D;
     padding: 10px;
@@ -137,11 +137,11 @@ button{
     animation-duration: 0.4s
   }
 
-  #modal-header-font {
+#modal-header-font {
       font-size: 28px;
   }
   
-  .modal-content {
+.modal-content {
     position: relative; 
     background-color: #e9d5da;
     padding: 10px; 
