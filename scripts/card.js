@@ -1,5 +1,4 @@
-//On Loading for the page - don't put in html anymore, put here
-function pageInit()
+function pageInit()  //On Loading for the page - don't put in html anymore, put here
 {
   loadState();
   createModal();
@@ -41,19 +40,25 @@ function saveState()
   for(var i=0; i < 24; i++) { 
         stateJSON[i] = getSquare(i);
     }
-    //save the date here as monday at 12:01
 
-    // function getMondayOfCurrentWeek() {
-    //   const today = new Date();
-    //   const first = today.getDate() - today.getDay() + 1;
+  //save the date here as monday at 12:00
     
-    //   const monday = new Date(today.setDate(first));
-    //   return monday;
-    // }
+  const recentSunday = getSundayOfCurrentWeek();
+    
     
   document.cookie = "data = " + JSON.stringify(stateJSON); 
 }
 
+function getSundayOfCurrentWeek() {
+  const today = new Date();
+  const first = today.getDate() - today.getDay();
+
+  const sunday = new Date(today.setDate(first));
+  sunday.setHours(0,0,0,0);
+
+  return sunday;
+
+}
 
 function getSquare(i)
 {
