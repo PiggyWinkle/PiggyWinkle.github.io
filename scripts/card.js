@@ -45,8 +45,8 @@ function saveState()
     
   const recentSunday = getSundayOfCurrentWeek();
     
-    
-  document.cookie = "data = " + JSON.stringify(stateJSON); 
+  
+  document.cookie = "data = " + JSON.stringify(stateJSON) + recentSunday; 
 }
 
 function getSundayOfCurrentWeek() {
@@ -59,6 +59,42 @@ function getSundayOfCurrentWeek() {
   return sunday;
 
 }
+
+function wkReset(){
+  // const newtoday = new Date();
+  const cookiesunday = //the date saved in the cookie;
+  const cookiesaturday = cookiesunday + 6;
+  const todayfr = new Date();
+
+
+  dates.inRange (todayfr,cookiesunday,cookiesaturday);
+
+  //true if d is between the start and end (inclusive)
+  //false if d is before start or after end.
+  
+  
+  // let dayte = getDate();
+  // let wkday = getDay();
+  // let newcard_dayte = 7 am on 1 day
+
+  // if days since newcard date >7 days (10,080 mins) then newcard;
+
+  // let text = "";
+  // const today = new Date();
+  // const someday = new Date();
+  // someday.setFullYear(2100, 0, 14);
+  
+  // if (someday > today) {
+  //   text = "Today is before January 14, 2100.";
+  // } else {
+  //   text = "Today is after January 14, 2100.";
+  // }
+
+
+
+  //return true or false
+}
+
 
 function getSquare(i)
 {
@@ -103,29 +139,6 @@ function getCookie(cname) {
     }
   }
   return "";
-}
-
-function wkReset(){
-  // let dayte = getDate();
-  // let wkday = getDay();
-  // let newcard_dayte = 7 am on 1 day
-
-  // if days since newcard date >7 days (10,080 mins) then newcard;
-
-  // let text = "";
-  // const today = new Date();
-  // const someday = new Date();
-  // someday.setFullYear(2100, 0, 14);
-  
-  // if (someday > today) {
-  //   text = "Today is before January 14, 2100.";
-  // } else {
-  //   text = "Today is after January 14, 2100.";
-  // }
-
-
-
-  //return true or false
 }
 
 
