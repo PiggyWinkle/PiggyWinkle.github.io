@@ -1,3 +1,4 @@
+//On Loading for the page - don't put in html anymore, put here
 function pageInit()
 {
   loadState();
@@ -33,14 +34,26 @@ function setSquare(thisSquare,boxtext, css) {
   document.getElementById(currSquare).classList.add(...(css.split(" ")));
 }
 
+
 function saveState()
 {
   var stateJSON = {};
   for(var i=0; i < 24; i++) { 
         stateJSON[i] = getSquare(i);
     }
+    //save the date here as monday at 12:01
+
+    // function getMondayOfCurrentWeek() {
+    //   const today = new Date();
+    //   const first = today.getDate() - today.getDay() + 1;
+    
+    //   const monday = new Date(today.setDate(first));
+    //   return monday;
+    // }
+    
   document.cookie = "data = " + JSON.stringify(stateJSON); 
 }
+
 
 function getSquare(i)
 {
@@ -53,10 +66,12 @@ function getSquare(i)
 
 function loadState() {
   var cookie = getCookie("data");
-  if(cookie == "")
+  if(cookie == "" || wkReset()) //if there's a cookie OR it passes date check (>7 days) then new card
   {
     newCard();
   }
+  
+
   else{
     console.log( JSON.parse(getCookie("data")));
     var bingoJSON = JSON.parse(getCookie("data"));
@@ -69,22 +84,44 @@ function loadState() {
 }
 
 
-
-  function getCookie(cname) {
-    let name = cname + "=";
-    let decodedCookie = decodeURIComponent(document.cookie);
-    let ca = decodedCookie.split(';');
-    for(let i = 0; i <ca.length; i++) {
-      let c = ca[i];
-      while (c.charAt(0) == ' ') {
-        c = c.substring(1);
-      }
-      if (c.indexOf(name) == 0) {
-        return c.substring(name.length, c.length);
-      }
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i <ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
     }
-    return "";
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
   }
+  return "";
+}
+
+function wkReset(){
+  // let dayte = getDate();
+  // let wkday = getDay();
+  // let newcard_dayte = 7 am on 1 day
+
+  // if days since newcard date >7 days (10,080 mins) then newcard;
+
+  // let text = "";
+  // const today = new Date();
+  // const someday = new Date();
+  // someday.setFullYear(2100, 0, 14);
+  
+  // if (someday > today) {
+  //   text = "Today is before January 14, 2100.";
+  // } else {
+  //   text = "Today is after January 14, 2100.";
+  // }
+
+
+
+  //return true or false
+}
 
 
 //text resizing stuff below https://github.com/STRML/textFit#implementation-details
@@ -100,7 +137,6 @@ function press(element){
   doFit();
   saveState();
 }
-
 
 
 //Suggestion Form
@@ -119,7 +155,6 @@ function SubForm (){
 
   document.getElementById('comment').value = '';
 }
-
 
 
 //Modal modal modal
@@ -187,7 +222,6 @@ Boxes=[
   "No sterile bottles left",
 
 ];
-
 
 
 function shuffle(array) {
