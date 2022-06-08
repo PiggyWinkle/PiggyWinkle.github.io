@@ -160,16 +160,28 @@ window.onclick = function(e){
 //Leaderboard
 function SubScore (){
   $.ajax({
-    url:" ",
+    url:"https://api.apispreadsheets.com/data/TPb4Q7f3ROuHnRus/",
     type:"post",
-    data:$("#ScoreForm").serializeArray(),
+    data:$("#scoreForm").serializeArray(),
     success: function(){
-      alert("Form Data Submitted :D")
+      alert("Name Submitted :D")
     },
     error: function(){
       alert("There was an error :(")
     }
   });
 
-  document.getElementById('comment').value = '';
+  document.getElementById('name').value = '';
 }
+
+fetch("https://api.apispreadsheets.com/data/TPb4Q7f3ROuHnRus/", {
+	method: "POST",
+	body: JSON.stringify({"data": {"name":"value","bingo-score":"value"}, "query": "select*from26439wherename='value'"}),
+}).then(res =>{
+	if (res.status === 201){
+		// SUCCESS
+	}
+	else{
+		// ERROR
+	}
+})
