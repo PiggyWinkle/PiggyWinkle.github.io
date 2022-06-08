@@ -70,9 +70,6 @@ function loadState() {
 
 
 
-
-
-
   function getCookie(cname) {
     let name = cname + "=";
     let decodedCookie = decodeURIComponent(document.cookie);
@@ -88,8 +85,9 @@ function loadState() {
     }
     return "";
   }
-//text resizing stuff below https://github.com/STRML/textFit#implementation-details
 
+
+//text resizing stuff below https://github.com/STRML/textFit#implementation-details
 function doFit(){
   textFit(document.getElementsByClassName('bingo'), {maxFontSize: 22, alignHoriz: true, alignVert: true, multiLine: true });
 }
@@ -102,6 +100,8 @@ function press(element){
   doFit();
   saveState();
 }
+
+
 
 //Suggestion Form
 function SubForm (){
@@ -123,7 +123,6 @@ function SubForm (){
 
 
 //Modal modal modal
-
 function createModal(){
   let modalBtn = document.getElementById("modal-btn")
   
@@ -145,7 +144,10 @@ function createModal(){
       }
     }
   }
-  
+
+
+
+
 //idea sources: https://www.reddit.com/r/labrats/comments/v3velv/made_a_bingo_any_suggestions/
 Boxes=[
   "Forgot negative control",
@@ -186,6 +188,8 @@ Boxes=[
 
 ];
 
+
+
 function shuffle(array) {
   let currentIndex = array.length,  randomIndex;
 
@@ -205,7 +209,7 @@ function shuffle(array) {
 }
 
 
-//Leaderboard
+//Leaderboard - Insert Name
 function SubScore (){
   $.ajax({
     url:"https://api.apispreadsheets.com/data/TPb4Q7f3ROuHnRus/",
@@ -222,6 +226,8 @@ function SubScore (){
   document.getElementById('name').value = '';
 }
 
+
+//Leaderboard - Update Score
 fetch("https://api.apispreadsheets.com/data/TPb4Q7f3ROuHnRus/", {
 	method: "POST",
 	body: JSON.stringify({"data": {"name":"value","bingo-score":"value"}, "query": "select*from26439wherename='value'"}),
@@ -233,3 +239,18 @@ fetch("https://api.apispreadsheets.com/data/TPb4Q7f3ROuHnRus/", {
 		// ERROR
 	}
 })
+
+
+//Leaderboard - Read Name and Score
+
+  fetch("https://api.apispreadsheets.com/data/TPb4Q7f3ROuHnRus/").then(res=>{
+    if (res.status === 200){
+      // SUCCESS
+      res.json().then(data=>{
+        const yourData = data
+      }).catch(err => console.log(err))
+    }
+    else{
+      // ERROR
+    }
+  })
