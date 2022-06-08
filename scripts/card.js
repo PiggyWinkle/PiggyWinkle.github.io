@@ -107,10 +107,8 @@ function doFit(){
   textFit(document.getElementsByClassName('bingo'), {maxFontSize: 22, alignHoriz: true, alignVert: true, multiLine: true });
 }
 
-//cookies
 
-
-//bingo clicking
+//Bingo Tile Highlight By Click
 function press(element){
 
   document.getElementById(element.id).classList.toggle('score');
@@ -125,7 +123,7 @@ function SubForm (){
     type:"post",
     data:$("#myForm").serializeArray(),
     success: function(){
-      alert("Form Data Submitted :D")
+      alert("Suggestion Submitted :D")
     },
     error: function(){
       alert("There was an error :(")
@@ -157,4 +155,21 @@ window.onclick = function(e){
     modal.style.display = "none"
   }
 }
+}
+
+//Leaderboard
+function SubScore (){
+  $.ajax({
+    url:" ",
+    type:"post",
+    data:$("#ScoreForm").serializeArray(),
+    success: function(){
+      alert("Form Data Submitted :D")
+    },
+    error: function(){
+      alert("There was an error :(")
+    }
+  });
+
+  document.getElementById('comment').value = '';
 }
