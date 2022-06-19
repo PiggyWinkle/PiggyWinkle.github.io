@@ -68,14 +68,19 @@ function getSundayOfCurrentWeek() {
 //function to compare current date to the dates saved in the cookie, weekly reset
 function wkReset(storedDataJson){
 
-  var cookieSunday = storedDataJson["recentSunday"];
+  // The division by 86400000 turns the date into days instead of milliseconds
+  var cookieSunday = parseInt(Date.parse(storedDataJson["recentSunday"]) / 86400000);
   var cookieSaturday = cookieSunday + 6;
-  var currentDate = new Date();
+  var currentDate = parseInt(Date.now()/ 86400000);
 
-  if (currentDate > cookieSunday && currentDate < cookieSaturday) {
+  console.log(cookieSunday + "  |  " + currentDate + "  |  " + cookieSaturday);
+
+  if (currentDate >= cookieSunday && currentDate < cookieSaturday) {
+    console.log("Data is valid");
     return(false);
   }
   else{
+    console.log("Data is old");
     return(true);
   }
 
