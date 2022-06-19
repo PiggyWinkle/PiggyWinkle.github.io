@@ -130,8 +130,106 @@ function press(element){
   document.getElementById(element.id).classList.toggle('score');
   doFit();
   saveState();
+
+  checkWin();
 }
 
+//Bingo win check
+function checkWin(){
+  if(
+    //horizontal lines
+    (document.getElementById('square0').classList.contains("score") &&
+    document.getElementById('square1').classList.contains("score") &&
+    document.getElementById('square2').classList.contains("score") &&
+    document.getElementById('square3').classList.contains("score") &&
+    document.getElementById('square4').classList.contains("score"))
+    ||
+    (document.getElementById('square5').classList.contains("score") &&
+    document.getElementById('square6').classList.contains("score") &&
+    document.getElementById('square7').classList.contains("score") &&
+    document.getElementById('square8').classList.contains("score") &&
+    document.getElementById('square9').classList.contains("score"))
+    ||
+    (document.getElementById('square10').classList.contains("score") &&
+    document.getElementById('square11').classList.contains("score") &&
+    document.getElementById('squarefree').classList.contains("score") &&
+    document.getElementById('square12').classList.contains("score") &&
+    document.getElementById('square13').classList.contains("score"))
+    ||
+    (document.getElementById('square14').classList.contains("score") &&
+    document.getElementById('square15').classList.contains("score") &&
+    document.getElementById('square16').classList.contains("score") &&
+    document.getElementById('square17').classList.contains("score") &&
+    document.getElementById('square18').classList.contains("score"))
+    ||
+    (document.getElementById('square19').classList.contains("score") &&
+    document.getElementById('square20').classList.contains("score") &&
+    document.getElementById('square21').classList.contains("score") &&
+    document.getElementById('square22').classList.contains("score") &&
+    document.getElementById('square23').classList.contains("score"))
+    ||
+    //vertical lines
+    (document.getElementById('square0').classList.contains("score") &&
+    document.getElementById('square5').classList.contains("score") &&
+    document.getElementById('square10').classList.contains("score") &&
+    document.getElementById('square14').classList.contains("score") &&
+    document.getElementById('square19').classList.contains("score"))
+    ||
+    (document.getElementById('square1').classList.contains("score") &&
+    document.getElementById('square6').classList.contains("score") &&
+    document.getElementById('square11').classList.contains("score") &&
+    document.getElementById('square15').classList.contains("score") &&
+    document.getElementById('square20').classList.contains("score"))
+    ||
+    (document.getElementById('square2').classList.contains("score") &&
+    document.getElementById('square7').classList.contains("score") &&
+    document.getElementById('squarefree').classList.contains("score") &&
+    document.getElementById('square16').classList.contains("score") &&
+    document.getElementById('square21').classList.contains("score"))
+    ||
+    (document.getElementById('square3').classList.contains("score") &&
+    document.getElementById('square8').classList.contains("score") &&
+    document.getElementById('square12').classList.contains("score") &&
+    document.getElementById('square17').classList.contains("score") &&
+    document.getElementById('square22').classList.contains("score"))
+    ||
+    //diagonals
+    (document.getElementById('square0').classList.contains("score") &&
+    document.getElementById('square6').classList.contains("score") &&
+    document.getElementById('squarefree').classList.contains("score") &&
+    document.getElementById('square17').classList.contains("score") &&
+    document.getElementById('square23').classList.contains("score"))
+    ||
+    (document.getElementById('square4').classList.contains("score") &&
+    document.getElementById('square8').classList.contains("score") &&
+    document.getElementById('squarefree').classList.contains("score") &&
+    document.getElementById('square15').classList.contains("score") &&
+    document.getElementById('square19').classList.contains("score"))
+
+   ){
+    
+    // for starting the confetti 
+    const start = () => {
+      setTimeout(function() {
+          confetti.start()
+      }, 1000); // 1000 is time that after 1 second start the confetti ( 1000 = 1 sec)
+  };
+
+  //  for stopping the confetti 
+  const stop = () => {
+      setTimeout(function() {
+          confetti.stop()
+      }, 5000); // 5000 is time that after 5 second stop the confetti ( 5000 = 5 sec)
+  };
+
+  start();
+  stop();
+
+   }
+
+ 
+
+}
 
 //Suggestion Form
 function SubForm (){
