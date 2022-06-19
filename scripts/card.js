@@ -38,17 +38,21 @@ function setSquare(thisSquare,boxtext, css) {
 
 function saveState()
 {
-  var stateJSON = {};
+  var bingoBoardState = {};
   for(var i=0; i < 24; i++) { 
-        stateJSON[i] = getSquare(i);
-    }
+    bingoBoardState[i] = getSquare(i);
+  }
     
   const recentSunday = getSundayOfCurrentWeek();
-  recentSunday;
+
+  const cookieJson = {};
+  cookieJson["tiles"] = bingoBoardState;
+  cookieJson["recentSunday"] = recentSunday;
+
+  document.cookie = "data = " + JSON.stringify(cookieJson);
   
-  document.cookie = "data = " + JSON.stringify(stateJSON)
-  
-  console.log(document.cookie);
+  // console.log(document.cookie);
+  // console.log("data = " + JSON.stringify(cookieJson));
 }
 
 
@@ -101,12 +105,17 @@ function loadState() {
 
   else{
     console.log( JSON.parse(getCookie("data")));
+
     var bingoJSON = JSON.parse(getCookie("data"));
+
     console.log(bingoJSON);
+
     for(var i=0; i < 24; i++) { 
       console.log(bingoJSON[i]);
-      setSquare(i, bingoJSON[i].text, bingoJSON[i].css);
+
+      setSquare(i, bingoJSON.tiles[i].text, bingoJSON.tiles[i].css);
     }
+
   }
 }
 
