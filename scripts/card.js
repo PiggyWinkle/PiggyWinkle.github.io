@@ -68,7 +68,11 @@ function getSundayOfCurrentWeek() {
 
 }
 
-function wkReset(){
+function wkReset(cookie){
+  var cookieJson = JSON.parse(cookie);
+
+  cookieJson["recentSunday"]
+
   // const newtoday = new Date();
 
   // const cookiesunday = //the date saved in the cookie;
@@ -97,14 +101,14 @@ function getSquare(i)
 
 function loadState() {
   var cookie = getCookie("data");
-  if(cookie == "" || wkReset()) //if there's not a cookie OR if wkReset = true
+  if(cookie == "" || wkReset(cookie)) //if there's not a cookie OR if wkReset = true
   {
     newCard();
   }
   
 
   else{
-    console.log( JSON.parse(getCookie("data")));
+    // console.log( JSON.parse(getCookie("data")));
 
     var bingoJSON = JSON.parse(getCookie("data"));
 
