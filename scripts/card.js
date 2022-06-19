@@ -39,14 +39,14 @@ function setSquare(thisSquare,boxtext, css) {
 function saveState()
 {
   var stateJSON = {};
-  for(var i=0; i < 24; i++) { 
-        stateJSON[i] = getSquare(i);
-    }
+    for(var i=0; i < 24; i++) { 
+          stateJSON[i] = getSquare(i);
+      }
+      
     
   const recentSunday = getSundayOfCurrentWeek();
-  recentSunday;
   
-  document.cookie = "data = " + JSON.stringify(stateJSON)
+  document.cookie = "data = " + JSON.stringify(stateJSON);
   
   console.log(document.cookie);
 }
