@@ -37,8 +37,7 @@ table{
 }
 
 td{
-    padding: 10px;
-    background-color:#4D4C7D;
+    padding: 1px;
     border-radius: 7px;
 }
 
@@ -52,7 +51,6 @@ td{
 .bingo{
     background-color:#4D4C7D;
     border-radius: 7px;
-   
 
     height:150px;
     width:150px;
@@ -80,6 +78,7 @@ button{
 .suggestion{
     text-align:center;
     padding-bottom: 20px;
+
 }
 
 .suggestion-box{
@@ -89,6 +88,11 @@ button{
     font-weight: bold;
     height: 150px;
     width: 35%;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
 }
 
 /*text resizing*/

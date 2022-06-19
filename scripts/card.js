@@ -2,7 +2,9 @@
 function pageInit()  
 {
   loadState();
-  createModal();
+  doFit();
+  // createModal();
+  
 }
 
 
