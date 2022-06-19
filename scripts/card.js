@@ -49,7 +49,8 @@ function saveState()
   cookieJson["tiles"] = bingoBoardState;
   cookieJson["recentSunday"] = recentSunday;
 
-  document.cookie = "data = " + JSON.stringify(cookieJson);
+  localStorage.setItem('data', JSON.stringify(cookieJson))
+  // document.cookie = "data = " + JSON.stringify(cookieJson);
   
   // console.log(document.cookie);
   // console.log("data = " + JSON.stringify(cookieJson));
@@ -68,22 +69,20 @@ function getSundayOfCurrentWeek() {
 
 }
 
-function wkReset(cookie){
-  var cookieJson = JSON.parse(cookie);
+function wkReset(storedDataJson){
 
-  cookieJson["recentSunday"]
+  const newtoday = new Date();
 
-  // const newtoday = new Date();
+  const cookiesunday = storedDataJson["recentSunday"];
+  const cookiesaturday = cookiesunday + 6;
+  const todayfr = new Date();
 
-  // const cookiesunday = //the date saved in the cookie;
-  // const cookiesaturday = cookiesunday + 6;
-  // const todayfr = new Date();
+  return (false);
 
+  // console.log(dates.inRange (todayfr,cookiesunday,cookiesaturday));
 
-  // dates.inRange (todayfr,cookiesunday,cookiesaturday);
-
-  //true if d is between the start and end (inclusive)
-  //false if d is before start or after end.
+  // true if d is between the start and end (inclusive)
+  // false if d is before start or after end.
 
 
   //return true or false
@@ -100,46 +99,23 @@ function getSquare(i)
 }
 
 function loadState() {
-  var cookie = getCookie("data");
-  if(cookie == "" || wkReset(cookie)) //if there's not a cookie OR if wkReset = true
+  var storedData = JSON.parse(localStorage.getItem('data'));
+  // console.log(storedData);
+  if(storedData === null || wkReset(storedData)) //if there's not a cookie OR if wkReset = true
   {
     newCard();
   }
   
 
   else{
-    // console.log( JSON.parse(getCookie("data")));
-
-    var bingoJSON = JSON.parse(getCookie("data"));
-
-    console.log(bingoJSON);
 
     for(var i=0; i < 24; i++) { 
-      console.log(bingoJSON[i]);
-
-      setSquare(i, bingoJSON.tiles[i].text, bingoJSON.tiles[i].css);
+      // console.log(storedData["tiles"][i].text);
+      setSquare(i, storedData["tiles"][i].text, storedData["tiles"][i].css);
     }
-
   }
 }
 
-
-//A function to get a cookie from https://www.w3schools.com/js/js_cookies.asp
-function getCookie(cname) {
-  let name = cname + "=";
-  let decodedCookie = decodeURIComponent(document.cookie);
-  let ca = decodedCookie.split(';');
-  for(let i = 0; i <ca.length; i++) {
-    let c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
-}
 
 
 //text resizing stuff below https://github.com/STRML/textFit#implementation-details
