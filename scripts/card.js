@@ -71,22 +71,19 @@ function getSundayOfCurrentWeek() {
 function wkReset(cookie){
   var cookieJson = JSON.parse(cookie);
 
-  cookieJson["recentSunday"]
+  var cookieSunday = cookieJson["recentSunday"];
+  var cookieSaturday = cookieSunday + 6;
+  var currentDate = new Date();
 
-  // const newtoday = new Date();
+  if (currentDate > cookieSunday && currentDate < cookieSaturday) {
+    alert('Correct Date')
+  }
+  else{
+    alert('Outside of Range')
+  }
 
-  // const cookiesunday = //the date saved in the cookie;
-  // const cookiesaturday = cookiesunday + 6;
-  // const todayfr = new Date();
+  console.log(document.cookie)
 
-
-  // dates.inRange (todayfr,cookiesunday,cookiesaturday);
-
-  //true if d is between the start and end (inclusive)
-  //false if d is before start or after end.
-
-
-  //return true or false
 }
 
 
@@ -196,7 +193,7 @@ function createModal(){
         modal.style.display = "none"
       }
     }
-  }
+}
 
 
 
@@ -262,52 +259,56 @@ function shuffle(array) {
 
 
 //Leaderboard - Insert Name
-function SubScore (){
-  $.ajax({
-    url:"https://api.apispreadsheets.com/data/TPb4Q7f3ROuHnRus/",
-    type:"post",
-    data:$("#scoreForm").serializeArray(),
-    success: function(){
-      alert("Name Submitted :D")
-    },
-    error: function(){
-      alert("There was an error :(")
-    }
-  });
+// function SubScore (){
+//   $.ajax({
+//     url:"https://api.apispreadsheets.com/data/TPb4Q7f3ROuHnRus/",
+//     type:"post",
+//     data:$("#scoreForm").serializeArray(),
+//     success: function(){
+//       alert("Name Submitted :D")
+//     },
+//     error: function(){
+//       alert("There was an error :(")
+//     }
+//   });
 
-  document.getElementById('name').value = '';
-}
+//   document.getElementById('name').value = '';
+// }
 
 
 //Leaderboard - Update Score
-fetch("https://api.apispreadsheets.com/data/TPb4Q7f3ROuHnRus/", {
-	method: "POST",
-	body: JSON.stringify({"data": {"name":"value","bingo-score":"value"}, "query": "select*from26439wherename='value'"}),
-}).then(res =>{
-	if (res.status === 201){
-		// SUCCESS
-	}
-	else{
-		// ERROR
-	}
-})
+
+// fetch("https://api.apispreadsheets.com/data/TPb4Q7f3ROuHnRus/", {
+// 	method: "POST",
+// 	body: JSON.stringify({"data": {"name":"value","bingo-score":"value"}, "query": "select*from26439wherename='value'"}),
+// }).then(res =>{
+// 	if (res.status === 201){
+// 		// SUCCESS
+// 	}
+// 	else{
+// 		// ERROR
+// 	}
+// })
 
 
 //Leaderboard - Read Name and Score
 
-  fetch("https://api.apispreadsheets.com/data/TPb4Q7f3ROuHnRus/").then(res=>{
-    if (res.status === 200){
-      // SUCCESS
-      res.json().then(data=>{
-        const yourData = data
-      }).catch(err => console.log(err))
-    }
-    else{
-      // ERROR
-    }
-  })
+  // fetch("https://api.apispreadsheets.com/data/TPb4Q7f3ROuHnRus/").then(res=>{
+  //   if (res.status === 200){
+  //     // SUCCESS
+  //     res.json().then(data=>{
+  //       const yourData = data
+  //     }).catch(err => console.log(err))
+  //   }
+  //   else{
+  //     // ERROR
+  //   }
+  // })
 
-  //Function to set name and greeting as cookie
+ 
+ 
+ 
+//Function to set name and greeting as cookie
   // function checkCookie() {
   //   let username = getCookie("username");
   //   if (username != "") {
