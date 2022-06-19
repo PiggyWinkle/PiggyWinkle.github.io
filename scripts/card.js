@@ -1,4 +1,5 @@
-function pageInit()  //On Loading for the page - don't put in html anymore, put here
+//On Loading for the page - don't put in html anymore, put here
+function pageInit()  
 {
   loadState();
   createModal();
@@ -34,20 +35,23 @@ function setSquare(thisSquare,boxtext, css) {
 }
 
 
+
 function saveState()
 {
   var stateJSON = {};
   for(var i=0; i < 24; i++) { 
         stateJSON[i] = getSquare(i);
     }
-
-  //save the date here as monday at 12:00
     
   const recentSunday = getSundayOfCurrentWeek();
-    
+  recentSunday;
   
-  document.cookie = "data = " + JSON.stringify(stateJSON) + recentSunday; 
+  document.cookie = "data = " + JSON.stringify(stateJSON)
+  
+  console.log(document.cookie);
 }
+
+
 
 function getSundayOfCurrentWeek() {
   const today = new Date();
@@ -62,34 +66,16 @@ function getSundayOfCurrentWeek() {
 
 function wkReset(){
   // const newtoday = new Date();
-  const cookiesunday = //the date saved in the cookie;
-  const cookiesaturday = cookiesunday + 6;
-  const todayfr = new Date();
+
+  // const cookiesunday = //the date saved in the cookie;
+  // const cookiesaturday = cookiesunday + 6;
+  // const todayfr = new Date();
 
 
-  dates.inRange (todayfr,cookiesunday,cookiesaturday);
+  // dates.inRange (todayfr,cookiesunday,cookiesaturday);
 
   //true if d is between the start and end (inclusive)
   //false if d is before start or after end.
-  
-  
-  // let dayte = getDate();
-  // let wkday = getDay();
-  // let newcard_dayte = 7 am on 1 day
-
-  // if days since newcard date >7 days (10,080 mins) then newcard;
-
-  // let text = "";
-  // const today = new Date();
-  // const someday = new Date();
-  // someday.setFullYear(2100, 0, 14);
-  
-  // if (someday > today) {
-  //   text = "Today is before January 14, 2100.";
-  // } else {
-  //   text = "Today is after January 14, 2100.";
-  // }
-
 
 
   //return true or false
@@ -107,7 +93,7 @@ function getSquare(i)
 
 function loadState() {
   var cookie = getCookie("data");
-  if(cookie == "" || wkReset()) //if there's a cookie OR it passes date check (>7 days) then new card
+  if(cookie == "" || wkReset()) //if there's not a cookie OR if wkReset = true
   {
     newCard();
   }
@@ -125,6 +111,7 @@ function loadState() {
 }
 
 
+//A function to get a cookie from https://www.w3schools.com/js/js_cookies.asp
 function getCookie(cname) {
   let name = cname + "=";
   let decodedCookie = decodeURIComponent(document.cookie);
@@ -306,3 +293,16 @@ fetch("https://api.apispreadsheets.com/data/TPb4Q7f3ROuHnRus/", {
       // ERROR
     }
   })
+
+  //Function to set name and greeting as cookie
+  // function checkCookie() {
+  //   let username = getCookie("username");
+  //   if (username != "") {
+  //    alert("Welcome again " + username);
+  //   } else {
+  //     username = prompt("Please enter your name:", "");
+  //     if (username != "" && username != null) {
+  //       setCookie("username", username, 365);
+  //     }
+  //   }
+  // }

@@ -13,10 +13,6 @@
             </script>
 
 
-
-
-
-
             <link rel="icon" type="image/x-icon" href="assets/flavicon-02.svg">
 
             <!--Lato Font-->
@@ -37,6 +33,14 @@
         
         <body onload="pageInit()">
 
+            <button> Delete the Cookies
+                <script>
+                    document.cookie = "data=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+                </script>
+            </button>
+
+
+
             <!--Leaderboard Testing-->
             <button id="Leaderboard-score">Bingo!</button>
 
@@ -51,11 +55,11 @@
 
             <button onClick=" ">Submit</button>
 
-            <button>test
+            <!-- <button>test
                 <script>
-                    console.log(wkReset());
+                    console.log(getSundayOfCurrentWeek());
                 </script>
-            </button>
+            </button> -->
 
 
             <!-- Trigger/Open the Modal -->
