@@ -50,10 +50,6 @@ function saveState()
   cookieJson["recentSunday"] = recentSunday;
 
   localStorage.setItem('data', JSON.stringify(cookieJson))
-  // document.cookie = "data = " + JSON.stringify(cookieJson);
-  
-  // console.log(document.cookie);
-  // console.log("data = " + JSON.stringify(cookieJson));
 }
 
 
@@ -69,21 +65,19 @@ function getSundayOfCurrentWeek() {
 
 }
 
+//function to compare current date to the dates saved in the cookie, weekly reset
 function wkReset(storedDataJson){
-
-  const newtoday = new Date();
 
   var cookieSunday = storedDataJson["recentSunday"];
   var cookieSaturday = cookieSunday + 6;
   var currentDate = new Date();
 
   if (currentDate > cookieSunday && currentDate < cookieSaturday) {
-    alert('Correct Date')
+    return(false);
   }
   else{
-    alert('Outside of Range')
+    return(true);
   }
-  console.log(document.cookie)
 
 }
 
