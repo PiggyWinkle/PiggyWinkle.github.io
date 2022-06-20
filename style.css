@@ -1,6 +1,6 @@
 body{
     background-color:#3c3760;
-    background-image: url(assets/microbes2.svg);
+    /* background-image: url(assets/microbes2.svg); */
     background-repeat: tile;
     background-size: 2000px;
 }
@@ -17,7 +17,7 @@ h3{
     color:#9585ac;
     font-family:'Lato';
     font-size: 5vw;
-    padding-bottom: 0;
+    padding: 0;
 }
 
 h4{
