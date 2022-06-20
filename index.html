@@ -43,34 +43,37 @@
             <!--Leaderboard Testing-->
             <!-- <button id="Leaderboard-score">Bingo!</button> -->
 
-            <!-- <form id="scoreForm" class="suggestion">
-                <label>name</label>
-                <input name="name" id="name"/>
-                <br/>
-                <label>bingo-score</label>
-                <input name="bingo-score"/>
-                <br/>
-            </form> -->
+            
 
 
             <!-- Trigger/Open the Modal -->
             <!-- <img src="Leaderboard-03.svg" width="75" height="75"> -->
-            <!-- <button id="modal-btn" class="leaderboard">
-                <img id="leaderboard-icon" src="assets/Leaderboard-03.svg" width="75" height="75"></img>
-            </button> -->
+            <button id="modal-btn" class="leaderboard ldButton">
+                <img id="leaderboard-icon" src="assets/Leaderboard-03.svg" width="30" height="30"></img>
+            </button>
 
 
             <!-- The Modal -->
 
-            <!-- <div class="modal">
+            <div class="modal">
                 <div class="modal-header">
                   <span class="close-btn">&times;</span>
                   <h1 id="modal-header-font">Leaderboard</h1>
                 </div>
                 <div class="modal-content">
-                  <p>this is the text inside the modal</p>
+                    <form id="scoreForm" class="suggestion">
+                        <label class="suggBoxLabel">Username:</label>
+                        <input name="name" id="name"/>
+                        <br/>
+                        <label style="visibility:hidden">Bingo Score</label>
+                        <input name="bingo-score" style="visibility:hidden"/>
+                        <br/>
+                    </form>
+                    <button>Submit</button>
                 </div>
-              </div> -->
+              </div>
+
+           
 
 
               <div id="overlay" onclick="off()">

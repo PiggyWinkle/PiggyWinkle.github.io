@@ -3,7 +3,7 @@ function pageInit()
 {
   loadState();
   doFit();
-  // createModal();
+  createModal();
   
 }
 
@@ -349,21 +349,21 @@ function shuffle(array) {
 
 
 //Leaderboard - Insert Name
-// function SubScore (){
-//   $.ajax({
-//     url:"https://api.apispreadsheets.com/data/TPb4Q7f3ROuHnRus/",
-//     type:"post",
-//     data:$("#scoreForm").serializeArray(),
-//     success: function(){
-//       alert("Name Submitted :D")
-//     },
-//     error: function(){
-//       alert("There was an error :(")
-//     }
-//   });
+function subName (){
+  $.ajax({
+    url:"https://api.apispreadsheets.com/data/TPb4Q7f3ROuHnRus/",
+    type:"post",
+    data:$("#scoreForm").serializeArray(),
+    success: function(){
+      alert("Name Submitted :D")
+    },
+    error: function(){
+      alert("There was an error :(")
+    }
+  });
 
-//   document.getElementById('name').value = '';
-// }
+  document.getElementById('name').value = '';
+}
 
 
 //Leaderboard - Update Score
