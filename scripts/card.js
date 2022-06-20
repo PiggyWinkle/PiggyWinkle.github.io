@@ -193,6 +193,12 @@ function checkWin(){
     document.getElementById('square17').classList.contains("score") &&
     document.getElementById('square22').classList.contains("score"))
     ||
+    (document.getElementById('square4').classList.contains("score") &&
+    document.getElementById('square9').classList.contains("score") &&
+    document.getElementById('square13').classList.contains("score") &&
+    document.getElementById('square18').classList.contains("score") &&
+    document.getElementById('square23').classList.contains("score"))
+    ||
     //diagonals
     (document.getElementById('square0').classList.contains("score") &&
     document.getElementById('square6').classList.contains("score") &&
