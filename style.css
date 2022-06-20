@@ -1,8 +1,8 @@
 body{
     background-color:#3c3760;
-    /* background-image: url(assets/microbes2.svg); */
+    background-image: url("/assets/microbes.svg");
     background-repeat: tile;
-    background-size: 2000px;
+    background-size: 750px;
 }
 
 h1{
@@ -69,7 +69,7 @@ td{
     top: 50%;
     left: 50%;
     font-size: 20vw;
-    color: #ffea71;
+    color: #F2EB9B;
     font-weight: 900;
     font-family: 'Lato';
     transform: translate(-50%,-50%);
