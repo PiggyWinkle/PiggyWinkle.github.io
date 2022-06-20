@@ -4,10 +4,9 @@ function pageInit()
   loadState();
   doFit();
   createModal();
-  
 }
 
-
+//generate a new bingo card
 function newCard() {
  
     //array goes here
@@ -100,7 +99,10 @@ function getSquare(i)
 
 function loadState() {
   var storedData = JSON.parse(localStorage.getItem('data'));
+  
+  
   // console.log(storedData);
+
   if(storedData === null || wkReset(storedData)) //if there's not a cookie OR if wkReset = true
   {
     newCard();
@@ -134,108 +136,150 @@ function press(element){
   checkWin();
 }
 
+
 //Bingo win check
 function checkWin(){
-  if(
-    //horizontal lines
-    (document.getElementById('square0').classList.contains("score") &&
-    document.getElementById('square1').classList.contains("score") &&
-    document.getElementById('square2').classList.contains("score") &&
-    document.getElementById('square3').classList.contains("score") &&
-    document.getElementById('square4').classList.contains("score"))
-    ||
-    (document.getElementById('square5').classList.contains("score") &&
-    document.getElementById('square6').classList.contains("score") &&
-    document.getElementById('square7').classList.contains("score") &&
-    document.getElementById('square8').classList.contains("score") &&
-    document.getElementById('square9').classList.contains("score"))
-    ||
-    (document.getElementById('square10').classList.contains("score") &&
-    document.getElementById('square11').classList.contains("score") &&
-    document.getElementById('squarefree').classList.contains("score") &&
-    document.getElementById('square12').classList.contains("score") &&
-    document.getElementById('square13').classList.contains("score"))
-    ||
-    (document.getElementById('square14').classList.contains("score") &&
-    document.getElementById('square15').classList.contains("score") &&
-    document.getElementById('square16').classList.contains("score") &&
-    document.getElementById('square17').classList.contains("score") &&
-    document.getElementById('square18').classList.contains("score"))
-    ||
-    (document.getElementById('square19').classList.contains("score") &&
-    document.getElementById('square20').classList.contains("score") &&
-    document.getElementById('square21').classList.contains("score") &&
-    document.getElementById('square22').classList.contains("score") &&
-    document.getElementById('square23').classList.contains("score"))
-    ||
-    //vertical lines
-    (document.getElementById('square0').classList.contains("score") &&
-    document.getElementById('square5').classList.contains("score") &&
-    document.getElementById('square10').classList.contains("score") &&
-    document.getElementById('square14').classList.contains("score") &&
-    document.getElementById('square19').classList.contains("score"))
-    ||
-    (document.getElementById('square1').classList.contains("score") &&
-    document.getElementById('square6').classList.contains("score") &&
-    document.getElementById('square11').classList.contains("score") &&
-    document.getElementById('square15').classList.contains("score") &&
-    document.getElementById('square20').classList.contains("score"))
-    ||
-    (document.getElementById('square2').classList.contains("score") &&
-    document.getElementById('square7').classList.contains("score") &&
-    document.getElementById('squarefree').classList.contains("score") &&
-    document.getElementById('square16').classList.contains("score") &&
-    document.getElementById('square21').classList.contains("score"))
-    ||
-    (document.getElementById('square3').classList.contains("score") &&
-    document.getElementById('square8').classList.contains("score") &&
-    document.getElementById('square12').classList.contains("score") &&
-    document.getElementById('square17').classList.contains("score") &&
-    document.getElementById('square22').classList.contains("score"))
-    ||
-    (document.getElementById('square4').classList.contains("score") &&
-    document.getElementById('square9').classList.contains("score") &&
-    document.getElementById('square13').classList.contains("score") &&
-    document.getElementById('square18').classList.contains("score") &&
-    document.getElementById('square23').classList.contains("score"))
-    ||
-    //diagonals
-    (document.getElementById('square0').classList.contains("score") &&
-    document.getElementById('square6').classList.contains("score") &&
-    document.getElementById('squarefree').classList.contains("score") &&
-    document.getElementById('square17').classList.contains("score") &&
-    document.getElementById('square23').classList.contains("score"))
-    ||
-    (document.getElementById('square4').classList.contains("score") &&
-    document.getElementById('square8').classList.contains("score") &&
-    document.getElementById('squarefree').classList.contains("score") &&
-    document.getElementById('square15').classList.contains("score") &&
-    document.getElementById('square19').classList.contains("score"))
+  var wincheckJson = {};
+  
+  //Calling each bingo tile
+  var card0  = document.getElementById('square0').classList.contains("score");
+  var card1  = document.getElementById('square1').classList.contains("score");
+  var card2  = document.getElementById('square2').classList.contains("score");
+  var card3  = document.getElementById('square3').classList.contains("score");
+  var card4  = document.getElementById('square4').classList.contains("score");
+  var card5  = document.getElementById('square5').classList.contains("score");
+  var card6  = document.getElementById('square6').classList.contains("score");
+  var card7  = document.getElementById('square7').classList.contains("score");
+  var card8  = document.getElementById('square8').classList.contains("score");
+  var card9  = document.getElementById('square9').classList.contains("score");
+  var card10 = document.getElementById('square10').classList.contains("score");
+  var card11 = document.getElementById('square11').classList.contains("score");
+  var card12 = document.getElementById('square12').classList.contains("score");
+  var card13 = document.getElementById('square13').classList.contains("score");
+  var card14 = document.getElementById('square14').classList.contains("score");
+  var card15 = document.getElementById('square15').classList.contains("score");
+  var card16 = document.getElementById('square16').classList.contains("score");
+  var card17 = document.getElementById('square17').classList.contains("score");
+  var card18 = document.getElementById('square18').classList.contains("score");
+  var card19 = document.getElementById('square19').classList.contains("score");
+  var card20 = document.getElementById('square20').classList.contains("score");
+  var card21 = document.getElementById('square21').classList.contains("score");
+  var card22 = document.getElementById('square22').classList.contains("score");
+  var card23 = document.getElementById('square23').classList.contains("score");
+  var cardfree = document.getElementById('squarefree').classList.contains("score");
 
-   ){
+
+
+//horizontal wins
+  if (card0 && card1 && card2 && card3 && card4){
+
+    if (wincheckJson['row1']==="false"){
+      bingoWin();
+      wincheckJson['row1'] = true;
+      
+    }
     
-    // for starting the confetti 
-    const start = () => {
-      setTimeout(function() {
-          confetti.start()
-      }, 250); // 1000 is time that after 1 second start the confetti ( 1000 = 1 sec)
-  };
+  }
 
-  //  for stopping the confetti 
-  const stop = () => {
-      setTimeout(function() {
-          confetti.stop()
-      }, 5000); // 5000 is time that after 5 second stop the confetti ( 5000 = 5 sec)
-  };
+  if(card5 && card6 && card7 && card8 && card9){
 
-  start();
-  stop();
-  on();
+    if (!wincheckJson['row2']){
+      bingoWin();
+      wincheckJson['row2'] = true;
+    }
+  }
+    
+  if(card10 && card11 && cardfree && card12 && card13){
+    
+    if (!wincheckJson['row3']){
+      bingoWin();
+      wincheckJson['row3'] = true;
+    }
+  }
 
-   }
+  if(card14 && card15 && card16 && card17 && card18){
+    
+    if (!wincheckJson['row4']){
+      bingoWin();
+      wincheckJson['row4'] = true;
+    }
+  }
+
+  if(card19 && card20 && card21 && card22 && card23){
+    
+    if (!wincheckJson['row5']){
+      bingoWin();
+      wincheckJson['row5'] = true;
+    }
+  }
+
+//vertical wins    
+  if(card0 && card5 && card10 && card14 && card19){
+    
+    if (!wincheckJson['col1']){
+      bingoWin();
+      wincheckJson['col1'] = true;
+    }
+  }
+  
+  if(card1 && card6 && card11 && card15 && card20){
+    
+    if (!wincheckJson['col2']){
+      bingoWin();
+      wincheckJson['col2'] = true;
+    }
+  }
+    
+  if(card2 && card7 && cardfree && card16 && card21){
+    
+    if (!wincheckJson['col3']){
+      bingoWin();
+      wincheckJson['col3'] = true;
+    }
+  }
+    
+  if(card3 && card8 && card12 && card17 && card22){
+    
+    if (!wincheckJson['col4']){
+      bingoWin();
+      wincheckJson['col4'] = true;
+    }
+  } 
+
+  if(card4 && card9 && card13 && card18 && card23){
+    
+    if (!wincheckJson['col5']){
+      bingoWin();
+      wincheckJson['col5'] = true;
+    }
+  }
+
+//diagonal wins
+  if(card0 && card6 && cardfree && card17 && card23){
+    
+    if (!wincheckJson['dia1']){
+      bingoWin();
+      wincheckJson['dia1'] = true;
+    }
+  }
+
+  if(card4 && card8 && cardfree && card15 && card19){
+    
+    if (!wincheckJson['dia2']){
+      bingoWin();
+      wincheckJson['dia2'] = true;
+    }
+  }
+
+  localStorage.setItem('winCheckJson', JSON.stringify(wincheckJson));
+
+  console.log(JSON.stringify(wincheckJson));
+
 }
 
-//Bingo Overlay
+
+
+//Bingo Confetti and Overlay
 function on() {
   document.getElementById("overlay").style.display = "block";
 }
@@ -243,6 +287,26 @@ function on() {
 function off() {
   document.getElementById("overlay").style.display = "none";
 } 
+
+function bingoWin(){
+  // for starting the confetti 
+  const start = () => {
+    setTimeout(function() {
+        confetti.start()
+    }, 250); // 1000 is time that after 1 second start the confetti ( 1000 = 1 sec)
+  };
+
+  //  for stopping the confetti 
+  const stop = () => {
+    setTimeout(function() {
+        confetti.stop()
+    }, 5000); // 5000 is time that after 5 second stop the confetti ( 5000 = 5 sec)
+  };
+
+  start();
+  stop();
+  on();
+}
 
 //Suggestion Form
 function SubForm (){
