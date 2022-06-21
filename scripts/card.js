@@ -139,136 +139,170 @@ function press(element){
 
 //Bingo win check
 function checkWin(){
-  var wincheckJson = {};
+  var wincheckJson = JSON.parse(localStorage.getItem('winCheckJson'));
   
   //Calling each bingo tile
-  var card0  = document.getElementById('square0').classList.contains("score");
-  var card1  = document.getElementById('square1').classList.contains("score");
-  var card2  = document.getElementById('square2').classList.contains("score");
-  var card3  = document.getElementById('square3').classList.contains("score");
-  var card4  = document.getElementById('square4').classList.contains("score");
-  var card5  = document.getElementById('square5').classList.contains("score");
-  var card6  = document.getElementById('square6').classList.contains("score");
-  var card7  = document.getElementById('square7').classList.contains("score");
-  var card8  = document.getElementById('square8').classList.contains("score");
-  var card9  = document.getElementById('square9').classList.contains("score");
-  var card10 = document.getElementById('square10').classList.contains("score");
-  var card11 = document.getElementById('square11').classList.contains("score");
-  var card12 = document.getElementById('square12').classList.contains("score");
-  var card13 = document.getElementById('square13').classList.contains("score");
-  var card14 = document.getElementById('square14').classList.contains("score");
-  var card15 = document.getElementById('square15').classList.contains("score");
-  var card16 = document.getElementById('square16').classList.contains("score");
-  var card17 = document.getElementById('square17').classList.contains("score");
-  var card18 = document.getElementById('square18').classList.contains("score");
-  var card19 = document.getElementById('square19').classList.contains("score");
-  var card20 = document.getElementById('square20').classList.contains("score");
-  var card21 = document.getElementById('square21').classList.contains("score");
-  var card22 = document.getElementById('square22').classList.contains("score");
-  var card23 = document.getElementById('square23').classList.contains("score");
-  var cardfree = document.getElementById('squarefree').classList.contains("score");
+  var tile0  = document.getElementById('square0').classList.contains("score");
+  var tile1  = document.getElementById('square1').classList.contains("score");
+  var tile2  = document.getElementById('square2').classList.contains("score");
+  var tile3  = document.getElementById('square3').classList.contains("score");
+  var tile4  = document.getElementById('square4').classList.contains("score");
+  var tile5  = document.getElementById('square5').classList.contains("score");
+  var tile6  = document.getElementById('square6').classList.contains("score");
+  var tile7  = document.getElementById('square7').classList.contains("score");
+  var tile8  = document.getElementById('square8').classList.contains("score");
+  var tile9  = document.getElementById('square9').classList.contains("score");
+  var tile10 = document.getElementById('square10').classList.contains("score");
+  var tile11 = document.getElementById('square11').classList.contains("score");
+  var tile12 = document.getElementById('square12').classList.contains("score");
+  var tile13 = document.getElementById('square13').classList.contains("score");
+  var tile14 = document.getElementById('square14').classList.contains("score");
+  var tile15 = document.getElementById('square15').classList.contains("score");
+  var tile16 = document.getElementById('square16').classList.contains("score");
+  var tile17 = document.getElementById('square17').classList.contains("score");
+  var tile18 = document.getElementById('square18').classList.contains("score");
+  var tile19 = document.getElementById('square19').classList.contains("score");
+  var tile20 = document.getElementById('square20').classList.contains("score");
+  var tile21 = document.getElementById('square21').classList.contains("score");
+  var tile22 = document.getElementById('square22').classList.contains("score");
+  var tile23 = document.getElementById('square23').classList.contains("score");
+  var tilefree = document.getElementById('squarefree').classList.contains("score");
 
 
 
 //horizontal wins
-  if (card0 && card1 && card2 && card3 && card4){
+  if (tile0 && tile1 && tile2 && tile3 && tile4){
 
-    if (wincheckJson['row1']==="false"){
+    if (!wincheckJson['row1']){
       bingoWin();
       wincheckJson['row1'] = true;
-      
     }
-    
+  }
+  else {
+    wincheckJson['row1'] = false;
   }
 
-  if(card5 && card6 && card7 && card8 && card9){
+  if(tile5 && tile6 && tile7 && tile8 && tile9){
 
     if (!wincheckJson['row2']){
       bingoWin();
       wincheckJson['row2'] = true;
     }
   }
-    
-  if(card10 && card11 && cardfree && card12 && card13){
+  else {
+    wincheckJson['row2'] = false;
+  }
+
+  if(tile10 && tile11 && tilefree && tile12 && tile13){
     
     if (!wincheckJson['row3']){
       bingoWin();
       wincheckJson['row3'] = true;
     }
   }
+  else {
+    wincheckJson['row3'] = false;
+  }
 
-  if(card14 && card15 && card16 && card17 && card18){
+  if(tile14 && tile15 && tile16 && tile17 && tile18){
     
     if (!wincheckJson['row4']){
       bingoWin();
       wincheckJson['row4'] = true;
     }
   }
+  else {
+    wincheckJson['row4'] = false;
+  }
 
-  if(card19 && card20 && card21 && card22 && card23){
+  if(tile19 && tile20 && tile21 && tile22 && tile23){
     
     if (!wincheckJson['row5']){
       bingoWin();
       wincheckJson['row5'] = true;
     }
   }
+  else {
+    wincheckJson['row5'] = false;
+  }
 
 //vertical wins    
-  if(card0 && card5 && card10 && card14 && card19){
+  if(tile0 && tile5 && tile10 && tile14 && tile19){
     
     if (!wincheckJson['col1']){
       bingoWin();
       wincheckJson['col1'] = true;
     }
   }
+  else {
+    wincheckJson['col1'] = false;
+  }
   
-  if(card1 && card6 && card11 && card15 && card20){
+  if(tile1 && tile6 && tile11 && tile15 && tile20){
     
     if (!wincheckJson['col2']){
       bingoWin();
       wincheckJson['col2'] = true;
     }
   }
+  else {
+    wincheckJson['col2'] = false;
+  }
     
-  if(card2 && card7 && cardfree && card16 && card21){
+  if(tile2 && tile7 && tilefree && tile16 && tile21){
     
     if (!wincheckJson['col3']){
       bingoWin();
       wincheckJson['col3'] = true;
     }
   }
+  else {
+    wincheckJson['col3'] = false;
+  }
     
-  if(card3 && card8 && card12 && card17 && card22){
+  if(tile3 && tile8 && tile12 && tile17 && tile22){
     
     if (!wincheckJson['col4']){
       bingoWin();
       wincheckJson['col4'] = true;
     }
-  } 
+  }
+  else {
+    wincheckJson['col4'] = false;
+  }
 
-  if(card4 && card9 && card13 && card18 && card23){
+  if(tile4 && tile9 && tile13 && tile18 && tile23){
     
     if (!wincheckJson['col5']){
       bingoWin();
       wincheckJson['col5'] = true;
     }
   }
+  else {
+    wincheckJson['col5'] = false;
+  }
 
 //diagonal wins
-  if(card0 && card6 && cardfree && card17 && card23){
+  if(tile0 && tile6 && tilefree && tile17 && tile23){
     
     if (!wincheckJson['dia1']){
       bingoWin();
       wincheckJson['dia1'] = true;
     }
   }
+  else {
+    wincheckJson['dia1'] = false;
+  }
 
-  if(card4 && card8 && cardfree && card15 && card19){
+  if(tile4 && tile8 && tilefree && tile15 && tile19){
     
     if (!wincheckJson['dia2']){
       bingoWin();
       wincheckJson['dia2'] = true;
     }
+  }
+  else {
+    wincheckJson['dia2'] = false;
   }
 
   localStorage.setItem('winCheckJson', JSON.stringify(wincheckJson));
@@ -366,14 +400,14 @@ Boxes=[
   "Wait...the experiment actually worked? :O",
   "That's how you're supposed to do it, but we're doing it this way",
   "Data looks dodgy", 
-  "Fubared equipment",
+  "Catastrophic equipment failure",
   "Used wrong media",
   "Maybe it works this time",
   "Wrote a passive aggressive email",
   "Working on weekends",
   "\"Reading\"",
   "Forgot how to science in front of supervisor",
-  "\"I'll plot the data tomorrow\"(forgets about the data to plot)",
+  "\"I'll analyze the data tomorrow\"(forgets about the data)",
   "Lost my samples",
   "Experiment just stopped working",
   "Your cells seem to hate you",
@@ -389,6 +423,20 @@ Boxes=[
   "Chemical in one big hard lump",
   "N=1",
   "No sterile bottles left",
+  "As previously cited (1830 BCE)",
+  "Stolen autoclave slot",
+  "Rat fight",
+  "Minor safety violation",
+  "Bitten by mouse",
+  "Something stinks in here...",
+  "Beta mercaptoethanol spill",
+  "-80C on summer vacation",
+  "Master mix short 1 sample",
+  "...did I zero this?",
+  "Media boiled over",
+  "Paper rejected",
+  "Short one single plate",
+  "\"Borrowed\" equipment",  
 
 ];
 
