@@ -139,7 +139,7 @@ function press(element){
 
 //Bingo win check
 function checkWin(){
-  var wincheckJson = JSON.parse(localStorage.getItem('winCheckJson'));
+  var wincheckJson = JSON.parse(localStorage.getItem('winCheckJson')) || {};
   
   //Calling each bingo tile
   var tile0  = document.getElementById('square0').classList.contains("score");
