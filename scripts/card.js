@@ -3,7 +3,9 @@ function pageInit()
 {
   loadState();
   doFit();
+  doFit();
   createModal();
+  
 }
 
 //generate a new bingo card
