@@ -55,13 +55,13 @@ h4{
     -ms-transform: translate(-50%,-50%);
 }
 
-/* .bingo:hover{
+.bingo:hover{
     background-color: #e9d5da;
     color: #4D4C7D;
     cursor: pointer;
-} */
+}
 
-/*entire bingo box*/
+/* entire bingo box*/
 /* .bingo{
     background-color:#4D4C7D;
     border-radius: 7px;
@@ -218,13 +218,13 @@ button{
 .bingology-container {
     width: 100%;
     max-width: 500px;
-
+    flex-direction: column;
     margin-top: 0px;
     margin-bottom: 0px;
     margin-right: auto;
     margin-left: auto;
     display:flex;
-    flex-direction: column;
+    
     
 }
 
