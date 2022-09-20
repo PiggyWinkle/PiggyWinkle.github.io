@@ -27,8 +27,9 @@
             <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
 
             <!-- Confetti -->
-            <meta charset="UTF-8">
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <!-- <meta charset="UTF-8"> -->
+            <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
@@ -48,9 +49,10 @@
 
             <!-- Trigger/Open the Modal -->
             <!-- <img src="Leaderboard-03.svg" width="75" height="75"> -->
-            <button id="modal-btn" class="leaderboard ldButton">
+            
+            <!-- <button id="modal-btn" class="leaderboard ldButton">
                 <img id="leaderboard-icon" src="assets/Leaderboard-03.svg" width="30" height="30"></img>
-            </button>
+            </button> -->
 
 
             <!-- The Modal -->
@@ -71,73 +73,77 @@
                     </form>
                     <button>Submit</button>
                 </div>
-              </div>
+            </div>
 
            
 
 
-              <div id="overlay" onclick="off()">
-                  <div id="overlayText">BINGO</div>
-              </div> 
+            <div id="overlay" onclick="off()">
+                <div id="overlayText">BINGO</div>
+            </div> 
 
+            <!--Here will be the flexbox with everything in it?-->
+            <div class="bingology-container">
 
-            <img src="/assets/Logo.svg" alt="Bingology">
+                <img src="/assets/Logo.svg" alt="Bingology">
 
-            <!-- <h1>
-                <b>BINGO-logy</b>
-            </h1> -->
-            <h3>The weekly biology based bingo adventure</h3>
+                
+                <h3 id="header-fit" style="margin: 5px">The weekly biology  based <br> bingo adventure</h3>
 
-            <table>
-                <tr>
-                    <td><div id="square0" class="bingo" onClick="press(this)">&nbsp;</div></td>
-                    <td><div id="square1" class="bingo" onClick="press(this)">&nbsp;</div></td>
-                    <td><div id="square2" class="bingo" onClick="press(this)">&nbsp;</div></td>
-                    <td><div id="square3" class="bingo" onClick="press(this)">&nbsp;</div></td>
-                    <td><div id="square4" class="bingo" onClick="press(this)">&nbsp;</div></td>
-                </tr> 
-                <tr> 
-                    <td><div id="square5" class="bingo" onClick="press(this)">&nbsp;</div></td>
-                    <td><div id="square6" class="bingo" onClick="press(this)">&nbsp;</div></td>
-                    <td><div id="square7" class="bingo" onClick="press(this)">&nbsp;</div></td>
-                    <td><div id="square8" class="bingo" onClick="press(this)">&nbsp;</div></td>
-                    <td><div id="square9" class="bingo" onClick="press(this)">&nbsp;</div></td>
-                </tr>
-                <tr>
-                    <td><div id="square10" class="bingo" onClick="press(this)">&nbsp;</div></td>
-                    <td><div id="square11" class="bingo" onClick="press(this)">&nbsp;</div></td>
-                    <td><div id="squarefree" class="bingo" onClick="press(this)">FREE</div></td>
-                    <td><div id="square12" class="bingo" onClick="press(this)">&nbsp;</div></td>
-                    <td><div id="square13" class="bingo" onClick="press(this)">&nbsp;</div></td>
-                </tr> 
-                <tr> 
-                    <td><div id="square14" class="bingo" onClick="press(this)">&nbsp;</div></td>
-                    <td><div id="square15" class="bingo" onClick="press(this)">&nbsp;</div></td>
-                    <td><div id="square16" class="bingo" onClick="press(this)">&nbsp;</div></td>
-                    <td><div id="square17" class="bingo" onClick="press(this)">&nbsp;</div></td>
-                    <td><div id="square18" class="bingo" onClick="press(this)">&nbsp;</div></td>
-                </tr> 
-                <tr> 
-                    <td><div id="square19" class="bingo" onClick="press(this)">&nbsp;</div></td>
-                    <td><div id="square20" class="bingo" onClick="press(this)">&nbsp;</div></td>
-                    <td><div id="square21" class="bingo" onClick="press(this)">&nbsp;</div></td>
-                    <td><div id="square22" class="bingo" onClick="press(this)">&nbsp;</div></td>
-                    <td><div id="square23" class="bingo" onClick="press(this)">&nbsp;</div></td>
-                </tr>
-            </table>
+                <div class="bingology-board-container">
+                    <div class="bingology-board" style="width: 100vw; height: 100vw; max-height: 500px">
+                        <div class="bingology-row"> 
+                            <div id="square0" class="bingo" onClick="press(this)">&nbsp;</div>
+                            <div id="square1" class="bingo" onClick="press(this)">&nbsp;</div>
+                            <div id="square2" class="bingo" onClick="press(this)">&nbsp;</div>
+                            <div id="square3" class="bingo" onClick="press(this)">&nbsp;</div>
+                            <div id="square4" class="bingo" onClick="press(this)">&nbsp;</div>
+                        </div>
+                        <div class="bingology-row">
+                            <div id="square5" class="bingo" onClick="press(this)">&nbsp;</div>
+                            <div id="square6" class="bingo" onClick="press(this)">&nbsp;</div>
+                            <div id="square7" class="bingo" onClick="press(this)">&nbsp;</div>
+                            <div id="square8" class="bingo" onClick="press(this)">&nbsp;</div>
+                            <div id="square9" class="bingo" onClick="press(this)">&nbsp;</div>
+                        </div>
+                        <div class="bingology-row">
+                            <div id="square10" class="bingo" onClick="press(this)">&nbsp;</div>
+                            <div id="square11" class="bingo" onClick="press(this)">&nbsp;</div>
+                            <div id="squarefree" class="bingo" onClick="press(this)">FREE</div>
+                            <div id="square12" class="bingo" onClick="press(this)">&nbsp;</div>
+                            <div id="square13" class="bingo" onClick="press(this)">&nbsp;</div>
+                        </div>
+                        <div class="bingology-row">
+                            <div id="square14" class="bingo" onClick="press(this)">&nbsp;</div>
+                            <div id="square15" class="bingo" onClick="press(this)">&nbsp;</div>
+                            <div id="square16" class="bingo" onClick="press(this)">&nbsp;</div>
+                            <div id="square17" class="bingo" onClick="press(this)">&nbsp;</div>
+                            <div id="square18" class="bingo" onClick="press(this)">&nbsp;</div>
+                        </div>
+                        <div class="bingology-row">
+                            <div id="square19" class="bingo" onClick="press(this)">&nbsp;</div>
+                            <div id="square20" class="bingo" onClick="press(this)">&nbsp;</div>
+                            <div id="square21" class="bingo" onClick="press(this)">&nbsp;</div>
+                            <div id="square22" class="bingo" onClick="press(this)">&nbsp;</div>
+                            <div id="square23" class="bingo" onClick="press(this)">&nbsp;</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!--Suggestion Box-->
+                
+                <form id="myForm" class="suggestion">
+                    <label id="header-fit" class="suggBoxLabel">Have a suggestion? Please submit it below:</label>
+                    <textarea name="comment" id="comment" class="suggestion-box"></textarea>
+                    <br/>
+                </form>
+                <button onclick='SubForm()'>Submit</button>
+                
 
-            <!--Suggestion Box-->
-
-            <form id="myForm" class="suggestion">
-                <label class="suggBoxLabel">Have a suggestion? Please submit it below:</label>
-                <textarea name="comment" id="comment" class="suggestion-box"></textarea>
-                <br/>
-            </form>
-            <button onclick='SubForm()'>Submit</button>
-
-            <!--Credits to the Idea-->
-
-            <h4>Adapted from u/Southern-Dependent94's post on r/LabRats</h4>
+                <!--Credits to the Idea-->
+                <h4 id="header-fit" style="margin: 5px">Adapted from <br> u/Southern-Dependent94's post on r/LabRats</h4>
+                
+            </div>
 
         </body>
 </html>

@@ -122,7 +122,8 @@ function loadState() {
 
 //text resizing stuff below https://github.com/STRML/textFit#implementation-details
 function doFit(){
-  textFit(document.getElementsByClassName('bingo'), {maxFontSize: 10, alignHoriz:true, alignVert:true});
+  textFit(document.getElementsByClassName('bingo'), {maxFontSize: 12, alignHoriz:true, alignVert:true});
+  textFit(document.getElementById('header-fit'),{maxFontSize: 36})
 }
 
 
