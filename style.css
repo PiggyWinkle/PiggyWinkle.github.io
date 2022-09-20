@@ -234,6 +234,7 @@ button{
     align-items: center;
     flex-grow: 1;
     overflow: hidden;
+    
 }
 
 .bingology-board {
@@ -242,6 +243,7 @@ button{
     grid-gap: 5px;
     padding: 10px;
     box-sizing: border-box;
+    flex-direction: column;
 }
 
 .bingology-row {
