@@ -55,11 +55,11 @@ h4{
     -ms-transform: translate(-50%,-50%);
 }
 
-.bingo:hover{
+/* .bingo:hover{
     background-color: #e9d5da;
     color: #4D4C7D;
     cursor: pointer;
-}
+} */
 
 /* entire bingo box*/
 /* .bingo{
